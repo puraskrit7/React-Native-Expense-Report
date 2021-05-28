@@ -115,11 +115,11 @@ export default function AddItems({navigation})  {
                   Food & Drinks
                 </Text>
               </View> */}
-            <View>
+            <View style={{ borderWidth: 1, borderColor: 'red', borderRadius: 4, marginLeft:15 }}>
               <Picker
                 selectedValue={selectedValue}
-                style={{ height: 50, width: 150,alignItems: "center", marginLeft: 10,}}
-                onValueChange={(itemValue) => setSelectedValue(itemValue)}
+                  style={{ height: 60, width: 150, alignItems: "center", marginLeft: 10, }}
+                  onValueChange={(itemValue) => setSelectedValue(itemValue)}
               >
                 <Picker.Item label="Food & Drink" value="java" />
                   <Picker.Item label="Electricity" value="js" />
