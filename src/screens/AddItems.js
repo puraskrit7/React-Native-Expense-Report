@@ -104,17 +104,6 @@ export default function AddItems({navigation})  {
                    <Icon Icon name="restaurant" size={40}></Icon>
                
               </View>
-              {/* <View>
-                <Text
-                  style={{
-                    fontSize: 25,
-                    fontWeight: "bold",
-                    marginLeft: 10,
-                  }}
-                >
-                  Food & Drinks
-                </Text>
-              </View> */}
             <View style={{ borderWidth: 1, borderColor: 'red', borderRadius: 4, marginLeft:15 }}>
               <Picker
                 selectedValue={selectedValue}
