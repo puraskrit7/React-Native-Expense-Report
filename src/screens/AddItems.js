@@ -120,12 +120,13 @@ export default function AddItems({navigation})  {
                 selectedValue={selectedValue}
                   style={{ height: 60, width: 150, alignItems: "center", marginLeft: 10, }}
                   onValueChange={(itemValue) => setSelectedValue(itemValue)}
+                  
               >
                 <Picker.Item label="Food & Drink" value="java" />
                   <Picker.Item label="Electricity" value="js" />
-                  <Picker.Item label="Taxi" value="js" />
+                  {/* <Picker.Item label="Taxi" value="js" />
                   <Picker.Item label="Train" value="js" />
-                  <Picker.Item label="House Rent" value="js" />
+                  <Picker.Item label="House Rent" value="js" /> */}
               </Picker>
             </View>
             </View>
