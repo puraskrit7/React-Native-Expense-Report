@@ -7,8 +7,8 @@ import {
   Image,
 } from "react-native";
 
-export default class RecordItem extends Component {
-    render() {
+export default function RecordItem(props) {
+    // render() {
         return (
           <View>
             <View
@@ -30,7 +30,7 @@ export default class RecordItem extends Component {
                     justifyContent: "center",
                   }}
                 >
-                  <Icon Icon name={this.props.pass.name} size={40} ></Icon> 
+                  <Icon Icon name={props.pass.name} size={40} ></Icon> 
                 </View>
                 <Text
                   style={{
@@ -39,7 +39,7 @@ export default class RecordItem extends Component {
                     marginLeft: 10,
                   }}
                 >
-                  {this.props.pass.title}
+                  {props.pass.title}
                 </Text>
               </View>
               <Text
@@ -49,7 +49,7 @@ export default class RecordItem extends Component {
                   color: "#e76f51",
                 }}
               >
-                {this.props.pass.price}
+                {props.pass.price}
               </Text>
             </View>
             <View
@@ -63,5 +63,4 @@ export default class RecordItem extends Component {
             ></View>
           </View>
         );
-    }
 }

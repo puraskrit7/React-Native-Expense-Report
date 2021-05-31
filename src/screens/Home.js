@@ -3,21 +3,22 @@ import {View, Text, ImageBackground, Image, TouchableOpacity, ScrollView} from '
 import Icon from 'react-native-vector-icons/Ionicons';
 import Mat from 'react-native-vector-icons/MaterialCommunityIcons';
 import Font from 'react-native-vector-icons/FontAwesome5';
-export default class Home extends React.Component{
+export default function Home (props){
 
-  state={
+  const state={
     todaySelected:true
   }
-  onTabPressed=()=>{
-    this.setState({todaySelected:!this.state.todaySelected})
+  const onTabPressed=()=>{
+    // this.setState({todaySelected:!this.state.todaySelected})
+    setTodaySelected(!todaySelected)
   }
-  static navigationOptions = {
+  const navigationOptions = {
     title: 'Home',
-
   };
+  const [todaySelected,setTodaySelected]=React.useState(true)
 
-render(){
-  const {navigate} = this.props.navigation;
+// render(){
+  const {navigate} = props.navigation;
   return(
     <ImageBackground
         source={require("../images/bg.jpg")}
@@ -65,30 +66,30 @@ render(){
     }}>
       <View style={{flexDirection:'row', paddingTop:10, padding:30}}>
         <TouchableOpacity
-        onPress={this.onTabPressed}
+        onPress={onTabPressed}
         style={{
           paddingVertical:6,
           borderBottomWidth:4,
-          borderBottomColor:this.state.todaySelected ? '#00192d':'#fff',
+          borderBottomColor:todaySelected ? '#00192d':'#fff',
         }}
         >
           <Text style={{
             fontWeight:'bold',
             fontSize:25,
-            color:this.state.todaySelected ? '#00192D' : '#8e9aaf',
+            color:todaySelected ? '#00192D' : '#8e9aaf',
 
           }}>TODAY</Text> 
           
         </TouchableOpacity>
       
         <TouchableOpacity 
-        onPress={this.onTabPressed}
+        onPress={onTabPressed}
         style={{
           marginLeft:30,
           borderBottomWidth:4,
           paddingVertical:6,
-          borderBottomColor:this.state.todaySelected ? '#fff':'#00192d',
-          color:this.state.todaySelected ? '#8e9aaf':'#00192d',
+          borderBottomColor:todaySelected ? '#fff':'#00192d',
+          color:todaySelected ? '#8e9aaf':'#00192d',
         }}
        
         >
@@ -104,15 +105,15 @@ render(){
       </View>
 
       <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal:30}}>
-        <Text style={{fontSize:30, fontWeight:'bold'}} > {this.state.todaySelected? "16th Nov 2020" : "Nov 2020"} </Text>
-        <Text style={{fontSize:30, fontWeight:'bold', color:'#e76f51'}}> {this.state.todaySelected? "120" : "1800"}</Text>
+        <Text style={{fontSize:30, fontWeight:'bold'}} > {todaySelected? "16th Nov 2020" : "Nov 2020"} </Text>
+        <Text style={{fontSize:30, fontWeight:'bold', color:'#e76f51'}}> {todaySelected? "120" : "1800"}</Text>
       </View>
       <View style={{borderBottomWidth:2, width:'85%', marginLeft:30, marginTop:20, opacity:0.3}}></View>
 
       <View style={{width:'100%', height:'30%'}}>
     
         <ScrollView>
-            {this.state.todaySelected? (
+            {todaySelected? (
   <View> 
 {/* first Item */}
      <View style={{flexDirection:'row', 
@@ -343,5 +344,5 @@ render(){
     </View>
   </ImageBackground>
   ); 
-  }
+  
 }

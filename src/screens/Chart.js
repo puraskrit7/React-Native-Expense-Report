@@ -13,9 +13,9 @@ const data={
       }
     ]
   }
-export default class Chart extends React.Component {
-    render() {
-          const {navigate} = this.props.navigation;
+export default function Chart (props) {
+    // render() {
+        //   const {navigate} = props.navigation;
         return (
             <ImageBackground
                 source={require("../images/back.png")}
@@ -79,5 +79,5 @@ export default class Chart extends React.Component {
                 </View>
             </ImageBackground>
         )
-    }
+    // }
 }
